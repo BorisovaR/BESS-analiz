@@ -1,1 +1,0 @@
-from pathlib import Path\nimport sys\nBASE_DIR = Path(__file__).parent\nsys.path.insert(0, str(BASE_DIR))\nimport app\n

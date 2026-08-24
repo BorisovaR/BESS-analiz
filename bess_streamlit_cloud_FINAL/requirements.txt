@@ -1,1 +1,0 @@
-pandas\nnumpy\nplotly\nstreamlit\nopenpyxl\nscipy\nrequests\nreportlab\nlxml\n
