@@ -1,0 +1,9 @@
+pandas
+numpy
+plotly
+streamlit
+openpyxl
+scipy
+requests
+reportlab
+lxml
