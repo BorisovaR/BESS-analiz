@@ -1,0 +1,1 @@
+pandas==2.2.2\nnumpy==1.26.4\nplotly==5.22.0\nstreamlit==1.36.0\nopenpyxl==3.1.5\nscipy==1.13.1\nrequests==2.32.3\nreportlab==4.2.0\nlxml==5.2.2\n
