@@ -116,7 +116,7 @@ def generate_synthetic_ibex_prices(start: datetime, end: datetime, seed: int = 4
     Based on actual IBEX characteristics: base 80-150 EUR/MWh, peak 18-21h, higher winter
     """
     np.random.seed(seed)
-    timestamps = pd.date_range(start, end, freq='H')
+    timestamps = pd.date_range(start, end, freq='h')
     prices = []
     for ts in timestamps:
         hour = ts.hour
@@ -240,7 +240,7 @@ def get_price_data_for_simulation(baseline_df: pd.DataFrame, price_source: str =
     
     if price_source == "uploaded" and uploaded_file is not None:
         price_df = load_price_file(uploaded_file, filename)
-        price_15 = resample_hourly_to_15min(price_df.set_index("timestamp").resample('H').mean().reset_index() if len(price_df)>8760 else price_df)
+        price_15 = resample_hourly_to_15min(price_df.set_index("timestamp").resample('h').mean().reset_index() if len(price_df)>8760 else price_df)
         # Merge to baseline timestamps via asof
         price_15 = pd.merge_asof(baseline_df[["timestamp"]].sort_values("timestamp"), price_15.sort_values("timestamp"), on="timestamp", direction='nearest')
         return price_15, "Качен файл от потребител (реални данни)"
